@@ -195,4 +195,16 @@ from martian m
 left join martian s
 on m.super_id = s.martian_id
 order by m.martian_id
+
+select s.supply_id, isnull(i.quantity,0), s.name, s.description
+from (select * from inventory where base_id = 1) as i
+right join supply s
+on i.supply_id = s.supply_id
+order by s.supply_id
 */
+select v.first_name visitor_fn, v.last_name visitor_ln,
+m.first_name martian_fn, m.last_name martian_ln
+from visitor v
+full join martian as m
+on v.host_id = m.martian_id
+where m.martian_id is null or v.visitor_id is null
