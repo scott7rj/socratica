@@ -201,10 +201,19 @@ from (select * from inventory where base_id = 1) as i
 right join supply s
 on i.supply_id = s.supply_id
 order by s.supply_id
-*/
+
 select v.first_name visitor_fn, v.last_name visitor_ln,
 m.first_name martian_fn, m.last_name martian_ln
 from visitor v
 full join martian as m
 on v.host_id = m.martian_id
 where m.martian_id is null or v.visitor_id is null
+*/
+
+--connects each row in the left table with each row in the right table
+select b.base_id, s.supply_id, s.name,
+	coalesce((select quantity 
+	from inventory 
+	where base_id = b.base_id and supply_id = s.supply_id), 0) quantity
+from base b
+cross join supply s
