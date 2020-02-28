@@ -182,4 +182,17 @@ select first_name, last_name, base_name
 from martian     --left table
 full join base  --right table
 on martian.base_id = base.base_id; -- John and Olympus appears
+
+select v.first_name as visitor_fn, v.last_name as visitor_ln, 
+m.first_name as martian_n, m.last_name as martian_ln
+from visitor v
+left join martian m
+on v.host_id = m.martian_id
+
+select m.first_name fn, m.last_name ln,
+s.first_name super_fn, s.last_name super_ln
+from martian m
+left join martian s
+on m.super_id = s.martian_id
+order by m.martian_id
 */

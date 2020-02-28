@@ -9,7 +9,7 @@ def read_file_timed(path):
     """return the contents of the file at 'path' and measure time required ."""
     start_time = time.time()
     try:
-        f = open(path, mode="rb")]
+        f = open(path, mode="rb")
         data = f.read()
         return data
     except FileNotFoundError as err:
