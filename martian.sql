@@ -113,7 +113,7 @@ insert into base values('Tharsisland','2037-06-03')
 insert into base values('Valles Marineris 2.0','2040-12-01')
 insert into base values('Gale Cratertown','2041-08-15')
 insert into base values('New New New York','2042-01-10')
-insert into base values('Olympus Mons Spa & casino',null)
+insert into base values('Olympus Mons Spa & Casino',null)
 
 insert into martian values ('Ray','Bradbury',1,null)
 insert into martian values ('John','Black',4,10)
